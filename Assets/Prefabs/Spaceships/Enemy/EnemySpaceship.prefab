@@ -40,7 +40,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 590599124999967858}
-  - component: {fileID: 590599124999967757}
+  - component: {fileID: 7449425475246523584}
   - component: {fileID: 590599124999967860}
   - component: {fileID: 590599124999967756}
   - component: {fileID: 590599124999967758}
@@ -70,7 +70,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &590599124999967757
+--- !u!114 &7449425475246523584
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -79,13 +79,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 590599124999967857}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a4b0874c7d3308c4abf1c2bbfda5e8ec, type: 3}
+  m_Script: {fileID: 11500000, guid: b80b3c1163438ad48a94ced364dcb16a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _shipController: {fileID: 590599124999967860}
   _movementSystem: {fileID: 590599124999967756}
   _weaponSystem: {fileID: 590599124999967758}
   _battleIdentity: 2
+  _health: 200
+  _maxHealth: 200
+  _scoreValueCost: 1
 --- !u!114 &590599124999967860
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -232,6 +235,7 @@ SpriteRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -243,6 +247,7 @@ SpriteRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
