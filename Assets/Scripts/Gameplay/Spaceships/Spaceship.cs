@@ -1,10 +1,11 @@
 ﻿using Gameplay.ShipControllers;
 using Gameplay.ShipSystems;
 using Gameplay.Weapons;
+using Gameplay.Core;
 using UnityEngine;
 
 namespace Gameplay.Spaceships
-{
+{    
     public abstract class Spaceship : MonoBehaviour, ISpaceship, IDamagable
     {
         [SerializeField]
@@ -19,35 +20,40 @@ namespace Gameplay.Spaceships
         [SerializeField]
         protected UnitBattleIdentity _battleIdentity;
 
-
         public MovementSystem MovementSystem => _movementSystem;
         public WeaponSystem WeaponSystem => _weaponSystem;
 
         public UnitBattleIdentity BattleIdentity => _battleIdentity;
-
-        [SerializeField] protected float _health = 1;
+        
+        [SerializeField] protected NextFloat _health = new NextFloat();
         /// <summary>
         /// Health
         /// </summary>
-        public float Health => _health;
+        public float Health => _health.Value;
 
         [SerializeField] protected float _maxHealth = 1;
         /// <summary>
         /// Max health points
         /// </summary>
-        public float MaxHealth => _health;
+        public float MaxHealth => _maxHealth;
 
-        protected void Start()
+        protected virtual void Start()
         {
             _shipController.Init(this);
             _weaponSystem.Init(_battleIdentity);
-        }
+
+            //Health value normalize
+            if(_health.Value > _maxHealth)
+            {
+                _health.Value = _maxHealth;
+            }
+        }        
 
         public virtual void ApplyDamage(IDamageDealer damageDealer)
         {
-            _health -= damageDealer.Damage;
+            _health.Value -= damageDealer.Damage;
 
-            if (_health <= 0)
+            if (_health.Value <= 0)
             {
                 DestroyShip();
             }

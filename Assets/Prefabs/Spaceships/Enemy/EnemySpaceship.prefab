@@ -86,7 +86,9 @@ MonoBehaviour:
   _movementSystem: {fileID: 590599124999967756}
   _weaponSystem: {fileID: 590599124999967758}
   _battleIdentity: 2
-  _health: 200
+  _health:
+    SetAsSilent: 0
+    val: 200
   _maxHealth: 200
   _scoreValueCost: 1
 --- !u!114 &590599124999967860

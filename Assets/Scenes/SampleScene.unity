@@ -1208,7 +1208,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1639466744}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
   m_Name: 
@@ -1232,7 +1232,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 0
+  m_Text: 1
 --- !u!222 &1639466747
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1241,12 +1241,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1639466744}
   m_CullTransparentMesh: 0
---- !u!212 &2007423675 stripped
-SpriteRenderer:
-  m_CorrespondingSourceObject: {fileID: 2352596708668287078, guid: db160e65d2bc1c043828d51dfbc352da,
-    type: 3}
-  m_PrefabInstance: {fileID: 6910651213141950738}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2046054112
 GameObject:
   m_ObjectHideFlags: 0
@@ -1350,11 +1344,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1623967835}
     m_Modifications:
-    - target: {fileID: 5261341663563842587, guid: db160e65d2bc1c043828d51dfbc352da,
-        type: 3}
-      propertyPath: _maxHealth
-      value: 600
-      objectReference: {fileID: 0}
     - target: {fileID: 6910651213156479276, guid: db160e65d2bc1c043828d51dfbc352da,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1415,13 +1404,7 @@ PrefabInstance:
       propertyPath: m_Name
       value: PlayerSpaceship
       objectReference: {fileID: 0}
-    - target: {fileID: 6910651213156479313, guid: db160e65d2bc1c043828d51dfbc352da,
-        type: 3}
-      propertyPath: _representation
-      value: 
-      objectReference: {fileID: 2007423675}
-    m_RemovedComponents:
-    - {fileID: 6910651213156479315, guid: db160e65d2bc1c043828d51dfbc352da, type: 3}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: db160e65d2bc1c043828d51dfbc352da, type: 3}
 --- !u!1001 &7139034146379299536
 PrefabInstance:
