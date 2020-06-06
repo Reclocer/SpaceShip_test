@@ -281,30 +281,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 274657592}
   m_CullTransparentMesh: 0
---- !u!1 &319605398 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6910651213156479279, guid: db160e65d2bc1c043828d51dfbc352da,
+--- !u!114 &319605405 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1800143274106565678, guid: db160e65d2bc1c043828d51dfbc352da,
     type: 3}
   m_PrefabInstance: {fileID: 6910651213141950738}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &319605399
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 319605398}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7971f12a3a3e05f4a813b41644b92841, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _shipController: {fileID: 0}
-  _movementSystem: {fileID: 0}
-  _weaponSystem: {fileID: 0}
-  _battleIdentity: 0
-  _health: 1
-  _maxHealth: 1
 --- !u!1 &321141279
 GameObject:
   m_ObjectHideFlags: 0
@@ -765,7 +753,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _healthValueText: {fileID: 1639466746}
-  _spaceShip: {fileID: 0}
+  _spaceShip: {fileID: 319605405}
 --- !u!114 &1112227994
 MonoBehaviour:
   m_ObjectHideFlags: 0

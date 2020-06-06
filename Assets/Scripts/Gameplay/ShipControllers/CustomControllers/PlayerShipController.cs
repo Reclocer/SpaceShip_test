@@ -1,13 +1,26 @@
 ﻿using Gameplay.ShipSystems;
+using Gameplay.Helpers;
 using UnityEngine;
 
 namespace Gameplay.ShipControllers.CustomControllers
 {
     public class PlayerShipController : ShipController
     {
+        [SerializeField] private SpriteRenderer _representation;
+
         protected override void ProcessHandling(MovementSystem movementSystem)
         {
-            movementSystem.LateralMovement(Input.GetAxis("Horizontal") * Time.deltaTime);
+            float positionX = Input.GetAxis("Horizontal") * Time.deltaTime;
+            Vector3 transformPosition = transform.position;
+
+            if (GameAreaHelper.RestrictLateralMovement(ref transformPosition, positionX, _representation.bounds))
+            {
+                movementSystem.LateralMovement(positionX);
+            }
+            else
+            {
+                transform.position = transformPosition;
+            }
         }
 
         protected override void ProcessFire(WeaponSystem fireSystem)
