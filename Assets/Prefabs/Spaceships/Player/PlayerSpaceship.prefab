@@ -137,8 +137,8 @@ MonoBehaviour:
   _battleIdentity: 1
   _health:
     SetAsSilent: 0
-    val: 600
-  _maxHealth: 600
+    val: 800
+  _maxHealth: 800
 --- !u!114 &6910651213156479313
 MonoBehaviour:
   m_ObjectHideFlags: 0

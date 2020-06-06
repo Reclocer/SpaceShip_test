@@ -3,6 +3,7 @@ using Gameplay.ShipSystems;
 using Gameplay.Weapons;
 using Gameplay.Core;
 using UnityEngine;
+using System;
 
 namespace Gameplay.Spaceships
 {    
@@ -36,6 +37,12 @@ namespace Gameplay.Spaceships
         /// Max health points
         /// </summary>
         public float MaxHealth => _maxHealth;
+                
+        protected Action _shipDestroyed = () => { ShipDestroyed(); };
+        /// <summary>
+        /// Action after destroy this ship 
+        /// </summary>
+        public static event Action ShipDestroyed = () => { };
 
         protected virtual void Start()
         {

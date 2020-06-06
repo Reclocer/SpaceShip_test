@@ -9,7 +9,7 @@ namespace Gameplay.Spaceships
         /// On change health value
         /// </summary>
         public event Action<float> RefreshHealth = (health) => { };
-
+        
         protected override void Start()
         {
             base.Start();
@@ -29,6 +29,13 @@ namespace Gameplay.Spaceships
             {
                 _health.Value = _maxHealth;
             }
+        }
+
+        protected override void DestroyShip()
+        {
+            base.DestroyShip();
+
+            _shipDestroyed();
         }
     }
 }
