@@ -1,5 +1,53 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1793755704
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1793755705}
+  - component: {fileID: 1793755706}
+  m_Layer: 0
+  m_Name: MissileLauncher
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1793755705
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1793755704}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.49, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 6910651214060967067}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1793755706
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1793755704}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 52c7a0bcf6555e6469c68ce0f8de85e4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _projectile: {fileID: 6098139413310135623, guid: f426f358443a7714da94352a52981f0f,
+    type: 3}
+  _missile: {fileID: 11400000, guid: a34682f42a772454eb2ed6aa0a73790a, type: 2}
+  _barrel: {fileID: 1793755705}
+  _cooldown: 0.3
 --- !u!1 &4537579245384456957
 GameObject:
   m_ObjectHideFlags: 0
@@ -137,7 +185,7 @@ MonoBehaviour:
   _battleIdentity: 1
   _health:
     SetAsSilent: 0
-    val: 800
+    val: 200
   _maxHealth: 800
 --- !u!114 &6910651213156479313
 MonoBehaviour:
@@ -181,6 +229,8 @@ MonoBehaviour:
   _weapons:
   - {fileID: 6910651213495973518}
   - {fileID: 8983208217998367586}
+  _missileLauncher:
+  - {fileID: 1793755706}
 --- !u!61 &2540544495500081184
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -257,6 +307,7 @@ Transform:
   m_Children:
   - {fileID: 6910651213495973513}
   - {fileID: 8983208217998367589}
+  - {fileID: 1793755705}
   m_Father: {fileID: 6910651213156479276}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

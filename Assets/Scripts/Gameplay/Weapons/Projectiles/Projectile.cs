@@ -6,15 +6,14 @@ namespace Gameplay.Weapons.Projectiles
 {
     public abstract class Projectile : MonoBehaviour, IDamageDealer
     {
-
         [SerializeField]
-        private float _speed;
+        protected float _speed;
 
         [SerializeField] 
-        private float _damage;
+        protected float _damage;
 
 
-        private UnitBattleIdentity _battleIdentity;
+        protected UnitBattleIdentity _battleIdentity;
 
 
         public UnitBattleIdentity BattleIdentity => _battleIdentity;
@@ -28,13 +27,12 @@ namespace Gameplay.Weapons.Projectiles
         }
         
 
-        private void Update()
+        protected void Update()
         {
             Move(_speed);
         }
-
         
-        private void OnCollisionEnter2D(Collision2D other)
+        protected void OnCollisionEnter2D(Collision2D other)
         {
             var damagableObject = other.gameObject.GetComponent<IDamagable>();
             
@@ -44,8 +42,6 @@ namespace Gameplay.Weapons.Projectiles
                 damagableObject.ApplyDamage(this);
             }
         }
-        
-
 
         protected abstract void Move(float speed);
     }
