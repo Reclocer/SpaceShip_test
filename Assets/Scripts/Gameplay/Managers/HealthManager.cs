@@ -10,14 +10,22 @@ namespace Gameplay.Managers
         [SerializeField] private Text _healthValueText;
         [SerializeField] private PlayerSpaceShip _spaceShip;
 
-        private float _maxHealthPlayerShip = 1; 
+        private float _maxHealthPlayerShip = 1;
+
+        private void OnEnable()
+        {
+            _spaceShip.RefreshHealth += OnRefreshHealth;
+        }        
 
         private void Start()
         {
             _maxHealthPlayerShip = _spaceShip.MaxHealth; //подразумевается что максимальное здоровье игрока меняться не будет
-            OnRefreshHealth(_spaceShip.Health);
+            OnRefreshHealth(_spaceShip.Health);                         
+        }
 
-            _spaceShip.RefreshHealth += OnRefreshHealth; //объект "HealthManager" не разрушаем, отписка не требуется             
+        private void OnDisable()
+        {
+            _spaceShip.RefreshHealth -= OnRefreshHealth;
         }
 
         protected override HealthManager GetInstance()

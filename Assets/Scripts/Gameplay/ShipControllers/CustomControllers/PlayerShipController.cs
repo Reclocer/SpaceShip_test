@@ -1,9 +1,11 @@
-﻿using Gameplay.ShipSystems;
+﻿using Gameplay.Spaceships;
+using Gameplay.ShipSystems;
 using Gameplay.Helpers;
 using UnityEngine;
 
 namespace Gameplay.ShipControllers.CustomControllers
 {
+    [RequireComponent(typeof(Spaceship))]
     public class PlayerShipController : ShipController
     {
         [SerializeField] private SpriteRenderer _representation;
@@ -13,7 +15,7 @@ namespace Gameplay.ShipControllers.CustomControllers
             float positionX = Input.GetAxis("Horizontal") * Time.deltaTime;
             Vector3 transformPosition = transform.position;
 
-            if (GameAreaHelper.RestrictLateralMovement(ref transformPosition, positionX, _representation.bounds))
+            if (GameAreaHelper.RestrictLateralMovement(ref transformPosition, positionX, _representation.bounds, Camera.main))
             {
                 movementSystem.LateralMovement(positionX);
             }
