@@ -1,27 +1,30 @@
 ﻿using System.Collections.Generic;
+using Gameplay.Spaceships;
 using Gameplay.Weapons;
 using UnityEngine;
-using System.Linq;
 
 namespace Gameplay.ShipSystems
 {
+    [RequireComponent(typeof(Spaceship))]
     public class WeaponSystem : MonoBehaviour
     {
 
         [SerializeField]
-        private List<Weapon> _weapons;
+        private List<Gun> _guns;
 
-
+        [SerializeField]
+        private List<MissileLauncher> _missileLauncher;
 
         public void Init(UnitBattleIdentity battleIdentity)
         {
-            _weapons.ForEach(w => w.Init(battleIdentity));
-        }
-        
+            _guns.ForEach(w => w.Init(battleIdentity));
+            _missileLauncher.ForEach(w => w.Init(battleIdentity));
+        }        
         
         public void TriggerFire()
         {
-            _weapons.ForEach(w => w.TriggerFire());
+            _guns.ForEach(w => w.TriggerFire());
+            _missileLauncher.ForEach(w => w.TriggerFire());
         }
 
     }

@@ -1,12 +1,10 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
 using Gameplay.ShipControllers;
 using Gameplay.ShipSystems;
 using UnityEngine;
 
 public class EnemyShipController : ShipController
 {
-
     [SerializeField]
     private Vector2 _fireDelay;
 

@@ -1,10 +1,9 @@
 ﻿using UnityEngine;
 
 namespace Gameplay.ShipSystems
-{
+{    
     public class MovementSystem : MonoBehaviour
     {
-
         [SerializeField]
         private float _lateralMovementSpeed;
         
