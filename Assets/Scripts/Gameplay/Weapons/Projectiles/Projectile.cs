@@ -11,21 +11,19 @@ namespace Gameplay.Weapons.Projectiles
 
         [SerializeField] 
         protected float _damage;
-
-
-        protected UnitBattleIdentity _battleIdentity;
-
-
-        public UnitBattleIdentity BattleIdentity => _battleIdentity;
-        public float Damage => _damage;
-
         
+        protected UnitBattleIdentity _battleIdentity;
+        /// <summary>
+        /// Which side
+        /// </summary>
+        public UnitBattleIdentity BattleIdentity => _battleIdentity;
+
+        public float Damage => _damage;
 
         public void Init(UnitBattleIdentity battleIdentity)
         {
             _battleIdentity = battleIdentity;
-        }
-        
+        }        
 
         protected void Update()
         {

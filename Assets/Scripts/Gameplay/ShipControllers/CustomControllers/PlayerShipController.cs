@@ -4,8 +4,7 @@ using Gameplay.Helpers;
 using UnityEngine;
 
 namespace Gameplay.ShipControllers.CustomControllers
-{
-    [RequireComponent(typeof(Spaceship))]
+{    
     public class PlayerShipController : ShipController
     {
         [SerializeField] private SpriteRenderer _representation;

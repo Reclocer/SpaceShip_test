@@ -4,7 +4,7 @@ using UnityEngine.UI;
 
 namespace Gameplay.Managers
 {
-    public class ScoreManager : SingletonBase<ScoreManager>
+    public class ScoreManager : MonoBehaviour 
     {
         [SerializeField] private Text _scoreValueText;
 
@@ -12,21 +12,24 @@ namespace Gameplay.Managers
         /// <summary>
         /// The game score
         /// </summary>
-        public int Score => _score;
+        public int Score => _score;             
 
         /// <summary>
         /// Add score value
         /// </summary>
         /// <param name="score">Score value</param>
-        public void AddScore(int score)
+        public void AddScorePoints(int score)
         {
             _score += score;
             _scoreValueText.text = _score.ToString();
         }
 
-        protected override ScoreManager GetInstance()
+        /// <summary>
+        /// Reset score
+        /// </summary>
+        public void ResetScore()
         {
-            return this;
-        }
+            _score = 0;
+        }        
     }
 }

@@ -4,6 +4,7 @@ using UnityEngine;
 
 namespace Gameplay.ShipControllers
 {
+    [RequireComponent(typeof(Spaceship))]
     public abstract class ShipController : MonoBehaviour
     {
 

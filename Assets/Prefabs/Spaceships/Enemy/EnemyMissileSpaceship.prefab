@@ -45,6 +45,7 @@ GameObject:
   - component: {fileID: 4646249694663395523}
   - component: {fileID: 590599124999967756}
   - component: {fileID: 590599124999967758}
+  - component: {fileID: 3387403494614223860}
   - component: {fileID: 7280752513643992934}
   - component: {fileID: 5659333393718678246}
   - component: {fileID: 1387087252038566574}
@@ -91,7 +92,7 @@ MonoBehaviour:
     SetAsSilent: 0
     val: 400
   _maxHealth: 400
-  _scoreValueCost: 1
+  _scoreValueCost: 3
 --- !u!114 &4646249694663395523
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -137,6 +138,20 @@ MonoBehaviour:
   - {fileID: 7188259909707975564}
   _missileLauncher:
   - {fileID: 4312930918863235720}
+--- !u!114 &3387403494614223860
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 590599124999967857}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d42d92f3d15b076448fed9e7a271c1f3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _objectForSpawn: {fileID: 3377206395507243042, guid: 194ceb9eef94d5b449965bfa7cd584d9,
+    type: 3}
 --- !u!50 &7280752513643992934
 Rigidbody2D:
   serializedVersion: 4

@@ -1,9 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
-using Gameplay.Weapons;
-using Gameplay.Managers;
+﻿using UnityEngine;
 
 namespace Gameplay.Spaceships
 {
@@ -14,8 +9,8 @@ namespace Gameplay.Spaceships
         protected override void DestroyShip()
         {
             if (_battleIdentity == UnitBattleIdentity.Enemy)
-            {
-                ScoreManager.Instance.AddScore(_scoreValueCost);
+            {                
+                _scoreManager.AddScorePoints(_scoreValueCost);
             }
 
             base.DestroyShip();
