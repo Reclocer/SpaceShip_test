@@ -1,9 +1,9 @@
-﻿using Gameplay.Weapons;
-
-namespace Gameplay.Bonuses
+﻿namespace Gameplay.Bonuses
 {
-    public interface IHealthDealer : IWithHealth
+    public interface IHealthDealer
     {
-        UnitBattleIdentity BattleIdentity { get; }
+        UnitBattleIdentity ForBattleIdentity { get; }
+
+        float Health { get; }
     }
 }

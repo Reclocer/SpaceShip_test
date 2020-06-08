@@ -3,7 +3,7 @@ using Gameplay.Bonuses;
 
 namespace Gameplay.Spaceships
 {
-    public class PlayerSpaceShip : Spaceship
+    public class PlayerSpaceShip : Spaceship, IRecoverable
     {
         /// <summary>
         /// On change health value

@@ -1,5 +1,6 @@
 ﻿using Gameplay.ShipControllers;
 using Gameplay.ShipSystems;
+using Gameplay.Managers;
 using Gameplay.Weapons;
 using Gameplay.Core;
 using UnityEngine;
@@ -36,24 +37,27 @@ namespace Gameplay.Spaceships
         /// <summary>
         /// Max health points
         /// </summary>
-        public float MaxHealth => _maxHealth;
-                
-        protected Action _shipDestroyed = () => { ShipDestroyed(); };
+        public float MaxHealth => _maxHealth;               
+        
         /// <summary>
         /// Action after destroy this ship 
         /// </summary>
-        public static event Action ShipDestroyed = () => { };
+        public event Action ShipDestroyed = () => { };
+
+        protected ScoreManager _scoreManager;
 
         protected virtual void Start()
         {
             _shipController.Init(this);
             _weaponSystem.Init(_battleIdentity);
 
+            _scoreManager = FindObjectOfType<ScoreManager>();
+
             //Health value normalize
-            if(_health.Value > _maxHealth)
+            if (_health.Value > _maxHealth)
             {
                 _health.Value = _maxHealth;
-            }
+            }            
         }        
 
         public virtual void ApplyDamage(IDamageDealer damageDealer)
@@ -69,6 +73,7 @@ namespace Gameplay.Spaceships
         protected virtual void DestroyShip()
         {
             Destroy(gameObject);
+            ShipDestroyed();
         }
     }
 }
