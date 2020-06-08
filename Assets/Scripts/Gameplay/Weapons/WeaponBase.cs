@@ -28,5 +28,21 @@ namespace Gameplay.Weapons
             yield return new WaitForSeconds(cooldown);
             _readyToFire = true;
         }
+
+        /// <summary>
+        /// Reduction cooldown time
+        /// </summary>
+        /// <param name="time">Time</param>
+        public virtual void ReductionCooldownTime(float time)
+        {
+            if (_cooldown > 0)
+            {
+                _cooldown -= time;
+            }
+            else
+            {
+                _cooldown = 0;
+            }            
+        }
     }
 }
