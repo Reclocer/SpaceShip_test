@@ -11,7 +11,7 @@ namespace Gameplay.ShipControllers
         private ISpaceship _spaceship;
 
 
-        public void Init(ISpaceship spaceship)
+        public virtual void Init(ISpaceship spaceship)
         {
             _spaceship = spaceship;
         }

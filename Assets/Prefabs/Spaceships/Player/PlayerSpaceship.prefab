@@ -92,6 +92,7 @@ GameObject:
   - component: {fileID: 6910651213156479276}
   - component: {fileID: 1800143274106565678}
   - component: {fileID: 6910651213156479313}
+  - component: {fileID: 8449026391481064331}
   - component: {fileID: 6910651213156479314}
   - component: {fileID: 6910651213156479312}
   - component: {fileID: 2540544495500081184}
@@ -152,6 +153,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _representation: {fileID: 2352596708668287078}
+--- !u!114 &8449026391481064331
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6910651213156479279}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: da5defd239d89f649ada808685f94d87, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &6910651213156479314
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -178,6 +191,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dbe6f97e91afe7c44b9413a4b009a0b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _battleIdentity: 0
   _guns:
   - {fileID: 3752763073661021906}
   - {fileID: 1682422993774543678}

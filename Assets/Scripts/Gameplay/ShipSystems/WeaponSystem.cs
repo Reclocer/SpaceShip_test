@@ -41,6 +41,5 @@ namespace Gameplay.ShipSystems
                 gun.ReductionCooldownTime(energyDealer.Energy);
             }
         }
-
     }
 }
