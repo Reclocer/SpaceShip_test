@@ -30,16 +30,13 @@ namespace Gameplay.ShipSystems
         
         public void TriggerFire()
         {
-            _guns.ForEach(w => w.TriggerFire());
-            _missileLauncher.ForEach(w => w.TriggerFire());
+            _guns.ForEach(gun => gun.TriggerFire());
+            _missileLauncher.ForEach(ml => ml.TriggerFire());
         }
 
         public void ReductionWeaponCoolDownTime(IEnergyDealer energyDealer)
         {
-            foreach(Gun gun in _guns)
-            {
-                gun.ReductionCooldownTime(energyDealer.Energy);
-            }
+            _guns.ForEach(gun => gun.ReductionCooldownTime(energyDealer.Energy));            
         }
     }
 }

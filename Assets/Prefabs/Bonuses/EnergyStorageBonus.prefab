@@ -48,7 +48,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _speed: 5
   _forBattleIdentity: 1
-  _energy: 0.01
+  _energy: 0.02
 --- !u!212 &4559051980406195230
 SpriteRenderer:
   m_ObjectHideFlags: 0
