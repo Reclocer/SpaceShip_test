@@ -8,11 +8,11 @@ namespace Gameplay.Managers
     {
         [SerializeField] private Text _scoreValueText;
 
-        private int _score = 0;
         /// <summary>
         /// The game score
         /// </summary>
-        public int Score => _score;             
+        public int Score => _score;
+        private int _score = 0;                     
 
         /// <summary>
         /// Add score value

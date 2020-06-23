@@ -1,6 +1,5 @@
 ﻿using Gameplay.ShipControllers;
 using Gameplay.ShipSystems;
-using Gameplay.Managers;
 using Gameplay.Weapons;
 using Gameplay.Core;
 using UnityEngine;
@@ -43,16 +42,12 @@ namespace Gameplay.Spaceships
         /// Action after destroy this ship 
         /// </summary>
         public event Action ShipDestroyed = () => { };
-
-        protected ScoreManager _scoreManager;
-
+        
         protected virtual void Start()
         {
             _shipController.Init(this);
             _weaponSystem.Init(_battleIdentity);
-
-            _scoreManager = FindObjectOfType<ScoreManager>();
-
+              
             //Health value normalize
             if (_health.Value > _maxHealth)
             {
